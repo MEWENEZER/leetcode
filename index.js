@@ -48,4 +48,33 @@ const average = function (salary) {
     return result.reduce((item, index) => (item + index)) / result.length
 };
 
-console.log(average([6000,5000,4000,3000,2000,1000]))
+// console.log(average([6000,5000,4000,3000,2000,1000]))
+
+// 1492. The kth Factor of n
+
+// You are given two positive integers n and k. A factor of an integer n is defined as an integer i where n % i == 0.
+// Consider a list of all factors of n sorted in ascending order, return the kth factor in this list or
+// return -1 if n has less than k factors.
+
+// Input: n = 12, k = 3
+// Output: 3
+// Explanation: Factors list is [1, 2, 3, 4, 6, 12], the 3rd factor is 3.
+
+/**
+ * @param {number} n
+ * @param {number} k
+ * @return {number}
+ */
+const kthFactor = function (n, k) {
+    let result = [];
+
+    for (let i = 1; i <= n; i++) {
+        if (n % i === 0) {
+            result.push(i)
+        }
+    }
+
+    return k > result.length ? -1 : result[k - 1];
+};
+
+console.log(kthFactor(12, 5)) // 6
