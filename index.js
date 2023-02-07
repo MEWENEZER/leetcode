@@ -1,11 +1,11 @@
-// 1523. Count Odd Numbers in an Interval Range
-
-// Given two non-negative integers low and high. Return the count of odd numbers between low and high (inclusive).
-// Input: low = 3, high = 7
-// Output: 3
-// Explanation: The odd numbers between 3 and 7 are [3,5,7].
-
 /**
+ * '1523. Count Odd Numbers in an Interval Range'
+ *
+ * Given two non-negative integers low and high. Return the count of odd numbers between low and high (inclusive).
+ * Input: low = 3, high = 7
+ * Output: 3
+ * Explanation: The odd numbers between 3 and 7 are [3,5,7].
+ *
  * @param {number} low
  * @param {number} high
  * @return {number}
@@ -22,20 +22,20 @@ const countOdds = function (low, high) {
     return result;
 };
 
-// console.log(countOdds(3, 7))
-
-// 1491. Average Salary Excluding the Minimum and Maximum Salary
-
-// You are given an array of unique integers salary where salary[i] is the salary of the ith employee.
-// Return the average salary of employees excluding the minimum and maximum salary.
-// Answers within 10-5 of the actual answer will be accepted.
-
-// Input: salary = [4000,3000,1000,2000]
-// Output: 2500.00000
-// Explanation: Minimum salary and maximum salary are 1000 and 4000 respectively.
-//     Average salary excluding minimum and maximum salary is (2000+3000) / 2 = 2500
+// console.log(countOdds(3, 7)) -> 3
 
 /**
+ * '1491. Average Salary Excluding the Minimum and Maximum Salary'
+ *
+ * You are given an array of unique integers salary where salary[i] is the salary of the ith employee.
+ * Return the average salary of employees excluding the minimum and maximum salary.
+ * Answers within 10-5 of the actual answer will be accepted.
+ *
+ * Input: salary = [4000,3000,1000,2000]
+ * Output: 2500.00000
+ * Explanation: Minimum salary and maximum salary are 1000 and 4000 respectively.
+ * Average salary excluding minimum and maximum salary is (2000+3000) / 2 = 2500
+ *
  * @param {number[]} salary
  * @return {number}
  */
@@ -50,31 +50,33 @@ const average = function (salary) {
 
 // console.log(average([6000,5000,4000,3000,2000,1000]))
 
-// 1492. The kth Factor of n
-
-// You are given two positive integers n and k. A factor of an integer n is defined as an integer i where n % i == 0.
-// Consider a list of all factors of n sorted in ascending order, return the kth factor in this list or
-// return -1 if n has less than k factors.
-
-// Input: n = 12, k = 3
-// Output: 3
-// Explanation: Factors list is [1, 2, 3, 4, 6, 12], the 3rd factor is 3.
-
 /**
+ * '1281. Subtract the Product and Sum of Digits of an Integer'
+ *
+ * Given an integer number n, return the difference between the product of its digits and the sum of its digits.
+ *
+ * Example 1:
+ * Input: n = 234
+ * Output: 15
+ * Explanation:
+ * Product of digits = 2 * 3 * 4 = 24
+ * Sum of digits = 2 + 3 + 4 = 9
+ * Result = 24 - 9 = 15
+ *
  * @param {number} n
- * @param {number} k
- * @return {number}
+ * @returns {number}
  */
-const kthFactor = function (n, k) {
-    let result = [];
+const subtractProductAndSum = (n) => {
+    let array = String(n).split('').map(Number),
+        sum = 0,
+        pro = 0;
 
-    for (let i = 1; i <= n; i++) {
-        if (n % i === 0) {
-            result.push(i)
-        }
-    }
+    array.forEach(item => {
+        sum += item;
+        pro *= item;
+    })
 
-    return k > result.length ? -1 : result[k - 1];
-};
+    return pro - sum;
+}
 
-console.log(kthFactor(12, 5)) // 6
+// console.log(subtractProductAndSum(234)); // -> 15
