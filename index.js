@@ -69,7 +69,7 @@ const average = function (salary) {
 const subtractProductAndSum = (n) => {
     let array = String(n).split('').map(Number),
         sum = 0,
-        pro = 0;
+        pro = 1;
 
     array.forEach(item => {
         sum += item;
