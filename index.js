@@ -88,7 +88,7 @@ const subtractProductAndSum = (n) => {
  * @return {number}
  */
 const hammingWeight = function(n) {
-    return String(n).split('0').join('').length;
+    return n.toString(2).split('0').join('').length;
 };
 
-console.log(hammingWeight(100000001011)) // -> 4
+// console.log(hammingWeight(01000001011)) // -> 4
