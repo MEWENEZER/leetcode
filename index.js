@@ -80,3 +80,15 @@ const subtractProductAndSum = (n) => {
 }
 
 // console.log(subtractProductAndSum(234)); // -> 15
+
+/**
+ * 191. Number of 1 Bits
+ *
+ * @param {number} n - a positive integer
+ * @return {number}
+ */
+const hammingWeight = function(n) {
+    return String(n).split('0').join('').length;
+};
+
+console.log(hammingWeight(100000001011)) // -> 4
