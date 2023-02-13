@@ -92,3 +92,15 @@ const hammingWeight = function(n) {
 };
 
 // console.log(hammingWeight(01000001011)) // -> 4
+
+/**
+ * 709. To Lower Case
+ *
+ * Given a string s, return the string after replacing every uppercase letter with the same lowercase letter.
+ * @param s {string}
+ */
+const toLowerCase = function(s) {
+    return s.split('').map(item => item.toLowerCase()).join('');
+};
+
+// console.log(toLowerCase('WellCOME to The cLUB, Body!'))
