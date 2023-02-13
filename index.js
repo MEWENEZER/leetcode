@@ -100,7 +100,7 @@ const hammingWeight = function(n) {
  * @param s {string}
  */
 const toLowerCase = function(s) {
-    return s.split('').map(item => item.toLowerCase()).join('');
+    return s.toLowerCase();
 };
 
 // console.log(toLowerCase('WellCOME to The cLUB, Body!'))
