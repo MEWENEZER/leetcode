@@ -11,15 +11,15 @@
  * @return {number}
  */
 const countOdds = function (low, high) {
-    let result = 0;
+  let result = 0;
 
-    for (let i = low; i <= high; i++) {
-        if (i % 2 !== 0) {
-        result++;
-        }
+  for (let i = low; i <= high; i++) {
+    if (i % 2 !== 0) {
+      result++;
     }
+  }
 
-    return result;
+  return result;
 };
 
 // console.log(countOdds(3, 7)) -> 3
@@ -40,12 +40,12 @@ const countOdds = function (low, high) {
  * @return {number}
  */
 const average = function (salary) {
-    const min = Math.min(...salary);
-    const max = Math.max(...salary);
+  const min = Math.min(...salary);
+  const max = Math.max(...salary);
 
-    let result = salary.filter((item) => item !== min && item !== max);
+  let result = salary.filter((item) => item !== min && item !== max);
 
-    return result.reduce((item, index) => (item + index)) / result.length
+  return result.reduce((item, index) => item + index) / result.length;
 };
 
 // console.log(average([6000,5000,4000,3000,2000,1000]))
@@ -67,17 +67,17 @@ const average = function (salary) {
  * @returns {number}
  */
 const subtractProductAndSum = (n) => {
-    let array = String(n).split('').map(Number),
-        sum = 0,
-        pro = 1;
+  let array = String(n).split('').map(Number),
+    sum = 0,
+    pro = 1;
 
-    array.forEach(item => {
-        sum += item;
-        pro *= item;
-    })
+  array.forEach((item) => {
+    sum += item;
+    pro *= item;
+  });
 
-    return pro - sum;
-}
+  return pro - sum;
+};
 
 // console.log(subtractProductAndSum(234)); // -> 15
 
@@ -87,8 +87,8 @@ const subtractProductAndSum = (n) => {
  * @param {number} n - a positive integer
  * @return {number}
  */
-const hammingWeight = function(n) {
-    return n.toString(2).split('0').join('').length;
+const hammingWeight = function (n) {
+  return n.toString(2).split('0').join('').length;
 };
 
 // console.log(hammingWeight(01000001011)) // -> 4
@@ -99,8 +99,26 @@ const hammingWeight = function(n) {
  * Given a string s, return the string after replacing every uppercase letter with the same lowercase letter.
  * @param s {string}
  */
-const toLowerCase = function(s) {
-    return s.toLowerCase();
+const toLowerCase = function (s) {
+  return s.toLowerCase();
 };
 
 // console.log(toLowerCase('WellCOME to The cLUB, Body!'))
+
+/**
+ * @param {number[]} nums
+ * @return {number[]}
+ */
+const runningSum = function (nums) {
+  let result = [];
+  let sum = 0;
+
+  for (let i = 0; i < nums.length; i++) {
+    sum += nums[i];
+    nums[i] = sum;
+  }
+
+  return nums;
+};
+
+console.log(runningSum([1, 2, 3, 4])); // 1, 3, 6, 10
